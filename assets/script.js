@@ -79,3 +79,29 @@ function clickRight() {
 }
 clickRight();
 
+// Changement lors du click gauche 
+
+
+function clickLeft() {
+	flècheGauche.addEventListener("click", () => {
+		removeSelection();
+		index--;
+		if (index < 0) {
+			index = slides.length - 1;
+		}
+		changeImageAndTagLine();
+		addSelection();
+
+	});
+
+}
+clickLeft();
+
+
+
+
+
+
+
+
+
