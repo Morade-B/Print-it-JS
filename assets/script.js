@@ -41,10 +41,41 @@ function affichedDots() {
 }
 affichedDots();
 
+// Suppresion bullet point actif image précédente 
+
+function removeSelection() {
+	const slideDots = document.querySelectorAll(".dots .dot");
+	slideDots[index].classList.remove("dot_selected");
+}
+
+// Ajout bullet point actif image suivante
+
+function addSelection() {
+	const slideDots = document.querySelectorAll(".dots .dot");
+    slideDots[index].classList.add("dot_selected");
+}
+
+// Changement d'image et texte correspondant à l'image 
+
+function changeImageAndTagLine() {
+	img.src = `./assets/images/slideshow/${slides[index].image}`;
+	text.innerHTML = slides[index].tagLine;
+}
 
 
+// changement lors du click droit 
 
+function clickRight() {
+	flècheDroite.addEventListener("click", () => {
+		removeSelection();
+		index++;
+		if (index > slides.length - 1) {
+			index = 0;
+		}
+		changeImageAndTagLine();
+		addSelection();
+	});
 
-
-
+}
+clickRight();
 
