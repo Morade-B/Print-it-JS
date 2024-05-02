@@ -27,6 +27,19 @@ const img = document.querySelector('.banner-img');
 const text = document.querySelector('#banner p');
 let index = 0;
 
+// Ajout des bullets points au slider 
+
+function affichedDots() {
+	for (let i = 0; i < slides.length; i++) {
+		let dot = document.createElement("div");
+		dot.classList.add("dot");
+		dots.appendChild(dot);
+		if (i == index) {
+			dot.classList.add("dot_selected");
+		}
+	}
+}
+affichedDots();
 
 
 
